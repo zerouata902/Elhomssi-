@@ -3298,9 +3298,7 @@ function generateWhatsAppMessage(){
     message+= `Téléphone: ${document.getElementById('phone').value}\n`;
     message+= `Ville: ${document.getElementById('city').value}\n`;
     message+= `Adresse: ${document.getElementById('address').value}\n`;
-    const notes = document.getElementById('notes').value.trim();
-    if(notes) message+=`Notes: ${notes}\n`;
-    message+="\n*Détails de la commande:*\n";
+    
     cart.forEach((item,index)=>{
         message+=`${index+1}. ${item.name}${item.variant?' ('+item.variant+')':''} (${item.category==='men'?'Homme':item.category==='women'?'Femme':'Unisexe'}) × ${item.quantity} = ${item.quantity*item.price} DH\n`;
     });
